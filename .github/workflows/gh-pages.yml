@@ -37,8 +37,8 @@ jobs:
       run: |
         git remote rm origin
         git remote add origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-        ghp-import -f -p -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(CURDIR)/output
-        #make github
+        #ghp-import -f -p -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(CURDIR)/output
+        make github
       env:
         SITEURL: euroscipy.github.io
         GITHUB_TOKEN: ${{ secrets.GITHUB_BOT_TOKEN }}
